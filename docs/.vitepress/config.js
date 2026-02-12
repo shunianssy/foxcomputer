@@ -58,7 +58,7 @@ export default defineConfig({
       // 匹配所有路径，确保侧边栏全局可见
       '/': [
         {
-          text: '项目菜单',
+          text: 'flask',
           collapsed: false,
           items: getSidebarItems('flask') 
         }
