@@ -3,32 +3,47 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-// 兼容 ESM 模式下的 __dirname
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 /**
- * 自动生成侧边栏函数
- * @param {string} folder 文件夹路径 (相对于 docs 目录)
+ * 深度递归生成侧边栏
+ * @param {string} targetPath 绝对路径
+ * @param {string} linkPath 路由前缀
  */
-function autoGenerateSidebar(folder) {
-  // 这里的 ../../ 是因为 config.js 在 .vitepress 目录下
-  const dirPath = path.resolve(__dirname, '../../', folder)
-  
-  if (!fs.existsSync(dirPath)) return []
+function getSidebarItems(targetPath, linkPath) {
+  const items = []
+  if (!fs.existsSync(targetPath)) return items
 
-  return fs.readdirSync(dirPath)
-    .filter(file => {
-      // 过滤掉 index.md 和非 markdown 文件
-      return file.endsWith('.md') && file.toLowerCase() !== 'index.md'
-    })
-    .map(file => {
-      const name = file.replace('.md', '')
-      return {
-        text: name.charAt(0).toUpperCase() + name.slice(1), // 首字母大写
-        link: `/${folder}/${name}`
+  const files = fs.readdirSync(targetPath)
+
+  files.forEach(file => {
+    const fullPath = path.join(targetPath, file)
+    const stat = fs.statSync(fullPath)
+
+    if (stat.isDirectory()) {
+      // 如果是文件夹，递归处理
+      const children = getSidebarItems(fullPath, `${linkPath}${file}/`)
+      if (children.length > 0) {
+        items.push({
+          text: file,
+          items: children,
+          collapsed: true // 子目录默认折叠，防止侧边栏过长
+        })
       }
-    })
+    } else if (file.endsWith('.md') && file.toLowerCase() !== 'index.md') {
+      // 如果是 MD 文件，添加到列表
+      const name = file.replace('.md', '')
+      items.push({
+        text: name, // 这里直接显示文件名，如 "1.1"
+        link: `${linkPath}${name}`
+      })
+    }
+  })
+
+  // 排序逻辑：支持 1.1, 1.2 这种数字排序
+  return items.sort((a, b) => {
+    return a.text.localeCompare(b.text, undefined, { numeric: true, sensitivity: 'base' })
+  })
 }
 
 export default defineConfig({
@@ -39,35 +54,27 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     
-    // 侧边栏配置
     sidebar: {
-      // 当用户在 /flask/ 路径下时，自动显示 flask 目录下的文件
+      // 自动扫描 docs/flask 文件夹下的所有内容
       '/flask/': [
         {
-          text: 'Flask',
-          items: autoGenerateSidebar('flask')
+          text: '🚀 Flask 完整教程',
+          items: getSidebarItems(path.resolve(__dirname, '../../flask'), '/flask/')
         }
       ]
-      // 如果以后有 python 目录，直接加一行即可：
-      // '/python/': [{ text: 'Python 教程', items: autoGenerateSidebar('python') }]
     },
 
-    aside: true,
     nav: [
       { text: 'Flask', link: '/flask/' }
     ],
-    
+    // ... 其他配置保持不变
     footer: {
       message: 'Released under the CC BY-NC-SA 4.0 License.',
       copyright: 'Copyright © 2024 Shunianssy'
     },
-    
     socialLinks: [
       { icon: 'github', link: 'https://github.com/shunianssy/foxcomputer' }
     ],
-    
-    search: {
-      provider: 'local'
-    }
+    search: { provider: 'local' }
   }
 })
