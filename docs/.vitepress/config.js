@@ -7,15 +7,14 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 function getSidebarItems(folder) {
-  // 确保路径指向 docs/flask
   const dirPath = path.resolve(__dirname, '../', folder)
   
   if (!fs.existsSync(dirPath)) return []
 
-  return fs.readdirSync(dirPath)
+  // 获取文件夹下的所有 md 文件
+  const items = fs.readdirSync(dirPath)
     .filter(file => file.endsWith('.md') && file.toLowerCase() !== 'index.md')
     .sort((a, b) => {
-      // 提取文件名中的数字进行排序，例如 1.1 1.2 2.1
       const nA = parseFloat(a) || 0
       const nB = parseFloat(b) || 0
       return nA - nB
@@ -23,44 +22,45 @@ function getSidebarItems(folder) {
     .map(file => {
       const name = file.replace('.md', '')
       return {
-        text: name, // 侧边栏显示文件名
+        text: name, 
         link: `/${folder}/${name}`
       }
     })
+
+  // 在列表最前面插入“首页”选项
+  return [
+    { text: '首页', link: '/' },
+    ...items
+  ]
 }
 
 export default defineConfig({
   title: 'FoxComputer',
   description: '小狐狸提供的共享贡献计算机知识平台',
   base: '/',
-  
-  // 语言设置为中文，会自动汉化部分内置文本
   lang: 'zh-CN',
 
   themeConfig: {
     logo: '/logo.png',
     
-    // 汉化 UI 配置 
+    // UI 汉化
     darkModeSwitchLabel: '主题',
     sidebarMenuLabel: '菜单',
-    returnToTopLabel: '返回顶部',
+    returnToTopLabel: 'top',
     outlineTitle: '本页导读',
 
-    // 自定义上下页按钮文字
     docFooter: {
       prev: '上一篇',
       next: '下一篇'
     },
 
-    // --- 侧边栏配置 ---
-    // 为了让首页也显示菜单，我们直接使用数组格式，或者匹配 '/' 路径
     sidebar: {
-      // 匹配所有路径，确保首页和 Flask 目录都能看到菜单
+      // 匹配所有路径，确保侧边栏全局可见
       '/': [
         {
-          text: 'Flask 教程文档',
+          text: '项目菜单',
           collapsed: false,
-          items: getSidebarItems('flask') // 自动抓取 flask 文件夹下的所有 md
+          items: getSidebarItems('flask') 
         }
       ]
     },
