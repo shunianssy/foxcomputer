@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'FoxComputer',
   description: '小狐狸提供的共享贡献计算机知识平台',
-  base: '/foxcomputer/',
+  base: '/',
   
   themeConfig: {
     logo: '/logo.png',
