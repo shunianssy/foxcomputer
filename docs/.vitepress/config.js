@@ -55,6 +55,11 @@ export default defineConfig({
           text: 'Flask 教程文档',
           collapsed: false,
           items: getSidebarItems('flask') 
+        },
+        {
+          text: '科技快报',
+          collapsed: false,
+          items: getSidebarItems('news') 
         }
       ]
     },
@@ -62,7 +67,8 @@ export default defineConfig({
     // --- 导航栏配置 ---
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Flask', link: '/flask/index' }
+      { text: 'Flask', link: '/flask/index' },
+      { text: 'news', link: '/news/index' }
     ],
 
     footer: {
