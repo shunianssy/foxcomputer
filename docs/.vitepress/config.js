@@ -8,23 +8,23 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     
-    nav:[
+    nav: [
       { text: 'Flask', link: '/flask/' }
     ],
     
-    sidebar: {
-      '/guide/': [
-        {
-          text: 'Flask',
-          items: [
-            { text: '快速开始', link: '/flask/' }
-          ]
-        }
-      ]
+    sidebar: 'auto',
+    
+    footer: {
+      message: 'Released under the CC BY-NC-SA 4.0 License.',
+      copyright: 'Copyright © 2024 Shunianssy'
     },
     
     socialLinks: [
       { icon: 'github', link: 'https://github.com/shunianssy/foxcomputer' }
-    ]
+    ],
+    
+    search: {
+      provider: 'local'
+    }
   }
 })
