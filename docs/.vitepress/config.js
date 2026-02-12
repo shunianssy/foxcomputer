@@ -6,9 +6,6 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-/**
- * 自动化读取目录文件生成侧边栏列表
- */
 function getSidebarItems(folder) {
   // 确保路径指向 docs/flask
   const dirPath = path.resolve(__dirname, '../', folder)
@@ -43,10 +40,10 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     
-    // --- 汉化 UI 配置 ---
+    // 汉化 UI 配置 
     darkModeSwitchLabel: '主题',
-    sidebarMenuLabel: '菜单',      // 对应移动端 Menu 汉化
-    returnToTopLabel: '返回顶部',  // 对应 Return to top 汉化
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '返回顶部',
     outlineTitle: '本页导读',
 
     // 自定义上下页按钮文字
@@ -69,6 +66,7 @@ export default defineConfig({
     },
 
     nav: [
+      { text: '首页', link: '/' },
       { text: 'Flask', link: '/flask/index' }
     ],
 
