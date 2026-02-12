@@ -7,28 +7,27 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 /**
- * 核心自动生成函数：支持排序和深度查找
+ * 自动化读取目录文件生成侧边栏列表
  */
-function getSidebarItems(dirName) {
-  // 关键：确定 docs 的绝对路径
-  // 如果你的 .vitepress 在 docs 目录下，这里向上跳两级
-  const targetDir = path.resolve(__dirname, '../', dirName)
+function getSidebarItems(folder) {
+  // 确保路径指向 docs/flask
+  const dirPath = path.resolve(__dirname, '../', folder)
   
-  if (!fs.existsSync(targetDir)) {
-    console.warn(`目录不存在: ${targetDir}`)
-    return []
-  }
+  if (!fs.existsSync(dirPath)) return []
 
-  return fs.readdirSync(targetDir)
+  return fs.readdirSync(dirPath)
     .filter(file => file.endsWith('.md') && file.toLowerCase() !== 'index.md')
     .sort((a, b) => {
-      // 针对 1.1, 1.2 这种文件名进行逻辑排序
-      return parseFloat(a) - parseFloat(b)
+      // 提取文件名中的数字进行排序，例如 1.1 1.2 2.1
+      const nA = parseFloat(a) || 0
+      const nB = parseFloat(b) || 0
+      return nA - nB
     })
     .map(file => {
+      const name = file.replace('.md', '')
       return {
-        text: file.replace('.md', ''),
-        link: `/${dirName}/${file.replace('.md', '')}`
+        text: name, // 侧边栏显示文件名
+        link: `/${folder}/${name}`
       }
     })
 }
@@ -36,29 +35,60 @@ function getSidebarItems(dirName) {
 export default defineConfig({
   title: 'FoxComputer',
   description: '小狐狸提供的共享贡献计算机知识平台',
-  // 如果你部署在 https://<username>.github.io/ 根目录，这里填 '/'
-  // 如果是 https://<username>.github.io/foxcomputer/，这里填 '/foxcomputer/'
-  base: '/', 
+  base: '/',
+  
+  // 语言设置为中文，会自动汉化部分内置文本
+  lang: 'zh-CN',
 
   themeConfig: {
     logo: '/logo.png',
     
+    // --- 汉化 UI 配置 ---
+    darkModeSwitchLabel: '主题',
+    sidebarMenuLabel: '菜单',      // 对应移动端 Menu 汉化
+    returnToTopLabel: '返回顶部',  // 对应 Return to top 汉化
+    outlineTitle: '本页导读',
+
+    // 自定义上下页按钮文字
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
+
+    // --- 侧边栏配置 ---
+    // 为了让首页也显示菜单，我们直接使用数组格式，或者匹配 '/' 路径
     sidebar: {
-      // 匹配 /flask/ 路径下的所有页面
-      '/flask/': [
+      // 匹配所有路径，确保首页和 Flask 目录都能看到菜单
+      '/': [
         {
-          text: 'Flask 详细教程',
+          text: 'Flask 教程文档',
           collapsed: false,
-          items: getSidebarItems('flask') // 自动读取 docs/flask 目录
+          items: getSidebarItems('flask') // 自动抓取 flask 文件夹下的所有 md
         }
       ]
     },
 
     nav: [
-      { text: 'Flask 教程', link: '/flask/index' }
+      { text: 'Flask', link: '/flask/index' }
     ],
 
-    // ... 其他配置
-    search: { provider: 'local' }
+    footer: {
+      message: 'Released under the CC BY-NC-SA 4.0 License.',
+      copyright: 'Copyright © 2024 Shunianssy'
+    },
+    
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/shunianssy/foxcomputer' }
+    ],
+    
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: { buttonText: '搜索文档' },
+          placeholder: '搜索文档'
+        }
+      }
+    }
   }
 })
