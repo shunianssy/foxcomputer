@@ -1,12 +1,17 @@
 {
   "name": "foxcomputer-docs",
   "version": "1.0.0",
+  "description": "FoxComputer documentation",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
+  "keywords": ["documentation", "vitepress"],
+  "author": "Shunianssy",
   "devDependencies": {
-    "vitepress": "^1.3.0"
+    "vitepress": "^1.3.0",
+    "vue": "^3.4.0"
   }
 }
