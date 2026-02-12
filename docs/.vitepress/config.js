@@ -8,18 +8,30 @@ const __dirname = path.dirname(__filename)
 
 function getSidebarItems(folder) {
   const dirPath = path.resolve(__dirname, '../', folder)
+  
   if (!fs.existsSync(dirPath)) return []
 
-  return fs.readdirSync(dirPath)
+  // 获取文件夹下的所有 md 文件
+  const items = fs.readdirSync(dirPath)
     .filter(file => file.endsWith('.md') && file.toLowerCase() !== 'index.md')
-    .sort((a, b) => (parseFloat(a) || 0) - (parseFloat(b) || 0))
+    .sort((a, b) => {
+      const nA = parseFloat(a) || 0
+      const nB = parseFloat(b) || 0
+      return nA - nB
+    })
     .map(file => {
       const name = file.replace('.md', '')
       return {
-        text: name,
+        text: name, 
         link: `/${folder}/${name}`
       }
     })
+
+  // 在列表最前面插入“首页”选项
+  return [
+    { text: '首页', link: '/' },
+    ...items
+  ]
 }
 
 export default defineConfig({
@@ -34,7 +46,7 @@ export default defineConfig({
     // UI 汉化
     darkModeSwitchLabel: '主题',
     sidebarMenuLabel: '菜单',
-    returnToTopLabel: 'top', 
+    returnToTopLabel: '返回顶部',
     outlineTitle: '本页导读',
 
     docFooter: {
@@ -42,24 +54,17 @@ export default defineConfig({
       next: '下一篇'
     },
 
-    // --- 侧边栏配置 ---
     sidebar: {
+      // 匹配所有路径，确保侧边栏全局可见
       '/': [
         {
-          text: '快速导航',
-          items: [
-            { text: '首页', link: '/' } // 在这里手动添加首页链接
-          ]
-        },
-        {
-          text: 'Flask 教程文档',
+          text: '项目菜单',
           collapsed: false,
           items: getSidebarItems('flask') 
         }
       ]
     },
 
-    // --- 导航栏配置 ---
     nav: [
       { text: '首页', link: '/' },
       { text: 'Flask', link: '/flask/index' }
