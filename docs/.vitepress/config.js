@@ -61,6 +61,11 @@ export default defineConfig({
           collapsed: false,
           items: getSidebarItems('news') 
         },
+        {
+          text: '科技技能',
+          collapsed: false,
+          items: getSidebarItems('skills') 
+        },
        {
           text: '赛博扫盲',
           collapsed: false,
@@ -74,6 +79,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: 'Flask', link: '/flask/index' },
       { text: '科技新闻', link: '/news/index' },
+      { text: '科技技能', link: '/skills/index' },
       { text: '赛博扫盲', link: '/literacy/index' }
     ],
 
