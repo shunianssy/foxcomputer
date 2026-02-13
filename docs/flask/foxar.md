@@ -1,6 +1,7 @@
 # foxar
 
-## 引用原官方README.md，原项目地址[Github](https://github.com/shunianssy/foxar)，使用AGPLv3，本文传播受到许可，以[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt?spm=a2ty_o01.29997173.0.0.1cf75171UsJI0E&file=legalcode.txt)传播
+[Github](https://github.com/shunianssy/foxar)
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt?spm=a2ty_o01.29997173.0.0.1cf75171UsJI0E&file=legalcode.txt)
 
 A 100% Flask-compatible library built on top of FastAPI, providing the best of both worlds: Flask's simplicity and FastAPI's performance.
 
