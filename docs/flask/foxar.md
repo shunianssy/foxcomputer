@@ -1,7 +1,6 @@
 # foxar
 
-[Github](https://github.com/shunianssy/foxar)
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt?spm=a2ty_o01.29997173.0.0.1cf75171UsJI0E&file=legalcode.txt)
+## 引用原官方README.md，原项目地址[Github](https://github.com/shunianssy/foxar)，使用AGPLv3，本文传播受到许可，以[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt?spm=a2ty_o01.29997173.0.0.1cf75171UsJI0E&file=legalcode.txt)传播
 
 A 100% Flask-compatible library built on top of FastAPI, providing the best of both worlds: Flask's simplicity and FastAPI's performance.
 
@@ -87,8 +86,10 @@ uvicorn your_app:app --reload --port 5000
 
 ## 访问API文档
 
-- Swagger UI: http://localhost:5000/docs
-- ReDoc: http://localhost:5000/redoc
+运行应用后，可以通过以下地址访问：
+
+- Swagger UI: `http://localhost:5000/docs`
+- ReDoc: `http://localhost:5000/redoc`
 
 ## 主要组件
 
@@ -101,10 +102,15 @@ uvicorn your_app:app --reload --port 5000
 7. **Config**：配置类，兼容Flask的Config接口
 8. **url_for**：URL生成工具函数
 
+## 项目文件
+
+- 文档：请参考项目文档
+- 贡献指南：欢迎提交PR
+- 许可证：AGPLv3 License
+
 ## 注意事项
 
 - 虽然兼容Flask的基本语法，但某些Flask特有功能可能需要额外实现
-(当然，你如果实现了那就是太棒了！欢迎提交PR)
 - 支持异步和同步路由处理函数
 - 保持了FastAPI的所有高性能特性和类型提示
 - 自动生成OpenAPI文档，提供交互式API测试界面
@@ -117,78 +123,3 @@ uvicorn your_app:app --reload --port 5000
 - **高性能**：比传统WSGI框架（如Flask）具有更高的并发处理能力
 
 foxar为开发者提供了一种既熟悉又高效的Web框架选择，让你可以使用Flask的简洁语法，同时享受FastAPI的高性能特性。
-
-
-### Current Compatible Features
-- Basic routing decorator `@app.route()`
-- Blueprint support
-- Request objects `request` and `g` object
-- Response objects `Response` family
-- Session management `session`
-- Message flashing `flash`
-- Error handling `errorhandler`
-- Hook functions `before_request` and `after_request`
-- Configuration management `Config`
-- URL generation `url_for`
-- Template rendering `render_template`
-- Static file serving
-- URL mapping `url_map` property
-
-### Upcoming Features
-- **Core Context Management**: `app_context()`, `request_context()`, `current_app` proxy
-- **Session Management Enhancements**: Session persistence, `session.permanent`, `session.modified`
-- **Error Handling Improvements**: `abort()` function, enhanced error handling
-- **Routing System Enhancements**: Route aliases, route redirects, HTTP method support
-- **Request Object Improvements**: `request.is_json`, `request.endpoint`, `request.view_args`
-- **Response Object Enhancements**: Additional `Response` methods, improved `make_response()`
-- **Utility Functions**: `safe_join()`, `send_file()`, `url_quote()`, `url_unquote()`, `escape()`
-- **Configuration System Enhancements**: Environment variable support, configuration validation
-- **Test Client Improvements**: Fully compatible Flask test client API
-- **Signal System Improvements**: More Flask standard signals
-- **Command Line Interface**: Flask CLI compatible interface
-- **Blueprint System Enhancements**: Blueprint nesting, blueprint-level decorators
-- **Template System Enhancements**: Template filters, global variables, context processors
-- **Static File Service Enhancements**: Cache control, file compression
-- **Security Features**: CSRF protection, XSS protection, CORS support
-- **Other Flask Features**: `app.debug`, `app.testing`, enhanced message flashing, `g` object methods
-
-## Quick Start
-
-```python
-from foxar import Foxar
-
-app = Foxar(__name__)
-
-@app.route('/')
-def index():
-    return 'Hello, World!'
-
-if __name__ == '__main__':
-    app.run()
-```
-
-## Installation
-
-```bash
-pip install foxar
-```
-
-## Why foxar?
-
-1. **100% Flask Compatible**: Write Flask code and run it on FastAPI
-2. **Performance**: Leverage FastAPI's asynchronous capabilities and automatic OpenAPI documentation
-3. **Modern Python**: Take advantage of FastAPI's type hints and modern Python features
-4. **Easy Migration**: Migrate existing Flask applications with minimal changes
-5. **Extensible**: Use all FastAPI features alongside Flask-compatible code
-
-## Documentation
-
-For more information, please refer to the [documentation](docs/).
-
-## Contributing
-
-Contributions are welcome! Please see the [contributing guidelines](CONTRIBUTING.md) for more information.
-
-## License
-
-foxar is licensed under the AGPLv3 License. See the [LICENSE](LICENSE) file for details.
