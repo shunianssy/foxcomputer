@@ -66,6 +66,11 @@ export default defineConfig({
           collapsed: false,
           items: getSidebarItems('skills') 
         },
+        {
+          text: 'AI 知识',
+          collapsed: false,
+          items: getSidebarItems('ai') 
+        },
        {
           text: '赛博扫盲',
           collapsed: false,
@@ -80,6 +85,7 @@ export default defineConfig({
       { text: 'Flask', link: '/flask/index' },
       { text: '科技新闻', link: '/news/index' },
       { text: '科技技能', link: '/skills/index' },
+      { text: 'AI 知识', link: '/ai/index' },
       { text: '赛博扫盲', link: '/literacy/index' }
     ],
 
