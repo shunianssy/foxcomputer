@@ -28,6 +28,22 @@ export default defineConfig({
   base: '/',
   lang: 'zh-CN',
 
+  // 配置 markdown 选项，避免 Jinja2 模板语法与 Vue 冲突
+  markdown: {
+    // 禁用默认的代码块行高亮，避免解析问题
+    lineNumbers: false,
+    // 使用 Prism.js 作为语法高亮引擎
+    syntaxHighlight: 'prism',
+    // 配置 Prism.js 语言支持
+    prism: {
+      // 注册自定义语言或启用内置语言
+      languages: ['jinja2', 'env']
+    }
+  },
+  
+  // 忽略死链接检查
+  ignoreDeadLinks: true,
+
   themeConfig: {
     logo: '/logo.png',
     
@@ -57,6 +73,11 @@ export default defineConfig({
           items: getSidebarItems('flask') 
         },
         {
+          text: 'FastAPI 教程文档',
+          collapsed: false,
+          items: getSidebarItems('fastapi') 
+        },
+        {
           text: '科技快报',
           collapsed: false,
           items: getSidebarItems('news') 
@@ -83,6 +104,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: 'Flask', link: '/flask/index' },
+      { text: 'FastAPI', link: '/fastapi/index' },
       { text: '科技新闻', link: '/news/index' },
       { text: '科技技能', link: '/skills/index' },
       { text: 'AI 知识', link: '/ai/index' },

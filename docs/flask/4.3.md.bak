@@ -115,71 +115,71 @@ def register():
 
 ### 基本渲染
 
-```html
+```plaintext
 <form method="POST">
-    {{ form.hidden_tag() }}
+    &#123;&#123; form.hidden_tag() &#125;&#125;
     
     <div class="form-group">
-        {{ form.username.label }}
-        {{ form.username(class="form-control", placeholder="请输入用户名") }}
-        {% for error in form.username.errors %}
-            <span class="error">{{ error }}</span>
-        {% endfor %}
+        &#123;&#123; form.username.label &#125;&#125;
+        &#123;&#123; form.username(class="form-control", placeholder="请输入用户名") &#125;&#125;
+        &#123;% for error in form.username.errors %&#125;
+            <span class="error">&#123;&#123; error &#125;&#125;</span>
+        &#123;% endfor %&#125;
     </div>
     
     <div class="form-group">
-        {{ form.email.label }}
-        {{ form.email(class="form-control") }}
-        {% for error in form.email.errors %}
-            <span class="error">{{ error }}</span>
-        {% endfor %}
+        &#123;&#123; form.email.label &#125;&#125;
+        &#123;&#123; form.email(class="form-control") &#125;&#125;
+        &#123;% for error in form.email.errors %&#125;
+            <span class="error">&#123;&#123; error &#125;&#125;</span>
+        &#123;% endfor %&#125;
     </div>
     
     <div class="form-group">
-        {{ form.password.label }}
-        {{ form.password(class="form-control") }}
+        &#123;&#123; form.password.label &#125;&#125;
+        &#123;&#123; form.password(class="form-control") &#125;&#125;
     </div>
     
     <div class="form-group">
-        {{ form.confirm_password.label }}
-        {{ form.confirm_password(class="form-control") }}
+        &#123;&#123; form.confirm_password.label &#125;&#125;
+        &#123;&#123; form.confirm_password(class="form-control") &#125;&#125;
     </div>
     
     <div class="form-check">
-        {{ form.accept_terms(class="form-check-input") }}
-        {{ form.accept_terms.label(class="form-check-label") }}
+        &#123;&#123; form.accept_terms(class="form-check-input") &#125;&#125;
+        &#123;&#123; form.accept_terms.label(class="form-check-label") &#125;&#125;
     </div>
     
-    {{ form.submit(class="btn btn-primary") }}
+    &#123;&#123; form.submit(class="btn btn-primary") &#125;&#125;
 </form>
 ```
 
 ### 使用 Bootstrap 样式
 
-```html
+```plaintext
 <form method="POST" class="needs-validation" novalidate>
-    {{ form.hidden_tag() }}
+    &#123;&#123; form.hidden_tag() &#125;&#125;
     
-    {% for field in form %}
-        {% if field.type not in ['CSRFTokenField', 'SubmitField'] %}
+    &#123;% for field in form %&#125;
+        &#123;% if field.type not in ['CSRFTokenField', 'SubmitField'] %&#125;
         <div class="mb-3">
-            {{ field.label(class="form-label") }}
-            {% if field.type == 'BooleanField' %}
+            &#123;&#123; field.label(class="form-label") &#125;&#125;
+            &#123;% if field.type == 'BooleanField' %&#125;
                 <div class="form-check">
-                    {{ field(class="form-check-input") }}
-                    {{ field.label(class="form-check-label") }}
+                    &#123;&#123; field(class="form-check-input") &#125;&#125;
+                    &#123;&#123; field.label(class="form-check-label") &#125;&#125;
                 </div>
-            {% else %}
-                {{ field(class="form-control" + (" is-invalid" if field.errors else "")) }}
-                {% for error in field.errors %}
-                    <div class="invalid-feedback">{{ error }}</div>
-                {% endfor %}
-            {% endif %}
+            &#123;% else %&#125;
+                &#123;&#123; field(class="form-control" + (" is-invalid" if field.errors else "")) &#125;&#125;
+                &#123;% for error in field.errors %&#125;
+                    <div class="invalid-feedback">&#123;&#123; error &#125;&#125;</div>
+                &#123;% endfor %&#125;
+            &#123;% endif %&#125;
         </div>
-        {% endif %}
-    {% endfor %}
+        &#123;% endif %&#125;
+    &#123;% endfor %&#125;
     
-    {{ form.submit(class="btn btn-primary") }}
+    &#123;&#123; form.submit(class="btn btn-primary") &#125;&#125;
 </form>
 ```
 
@@ -219,8 +219,8 @@ app.config['WTF_CSRF_SECRET_KEY'] = 'your-csrf-secret-key'
 
 ### AJAX 请求中的 CSRF
 
-```html
-<meta name="csrf-token" content="{{ csrf_token() }}">
+```plaintext
+<meta name="csrf-token" content="&#123;&#123; csrf_token() &#125;&#125;">
 
 <script>
 fetch('/api/endpoint', {
@@ -245,34 +245,34 @@ class APIForm(FlaskForm):
 
 创建可复用的表单宏：
 
-```html
+```plaintext
 <!-- macros/form.html -->
-{% macro render_field(field) %}
-<div class="form-group {% if field.errors %}has-error{% endif %}">
-    {{ field.label(class="form-label") }}
-    {{ field(class="form-control" + (" is-invalid" if field.errors else ""), **kwargs) }}
-    {% if field.errors %}
-        {% for error in field.errors %}
-            <span class="invalid-feedback">{{ error }}</span>
-        {% endfor %}
-    {% elif field.description %}
-        <small class="form-text text-muted">{{ field.description }}</small>
-    {% endif %}
+&#123;% macro render_field(field) %&#125;
+<div class="form-group &#123;% if field.errors %&#125;has-error&#123;% endif %&#125;">
+    &#123;&#123; field.label(class="form-label") &#125;&#125;
+    &#123;&#123; field(class="form-control" + (" is-invalid" if field.errors else ""), **kwargs) &#125;&#125;
+    &#123;% if field.errors %&#125;
+        &#123;% for error in field.errors %&#125;
+            <span class="invalid-feedback">&#123;&#123; error &#125;&#125;</span>
+        &#123;% endfor %&#125;
+    &#123;% elif field.description %&#125;
+        <small class="form-text text-muted">&#123;&#123; field.description &#125;&#125;</small>
+    &#123;% endif %&#125;
 </div>
-{% endmacro %}
+&#123;% endmacro %&#125;
 ```
 
 使用宏：
 
-```html
-{% from "macros/form.html" import render_field %}
+```plaintext
+&#123;% from "macros/form.html" import render_field %&#125;
 
 <form method="POST">
-    {{ form.hidden_tag() }}
-    {{ render_field(form.username) }}
-    {{ render_field(form.email, placeholder="example@email.com") }}
-    {{ render_field(form.password) }}
-    {{ form.submit(class="btn btn-primary") }}
+    &#123;&#123; form.hidden_tag() &#125;&#125;
+    &#123;&#123; render_field(form.username) &#125;&#125;
+    &#123;&#123; render_field(form.email, placeholder="example@email.com") &#125;&#125;
+    &#123;&#123; render_field(form.password) &#125;&#125;
+    &#123;&#123; form.submit(class="btn btn-primary") &#125;&#125;
 </form>
 ```
 
@@ -284,8 +284,8 @@ class APIForm(FlaskForm):
 | 字段 | `StringField('标签', validators=[...])` |
 | 验证 | `form.validate_on_submit()` |
 | 获取数据 | `form.field.data` |
-| 渲染字段 | `{{ form.field() }}` |
-| 显示错误 | `{% for error in form.field.errors %}` |
-| CSRF 令牌 | `{{ form.hidden_tag() }}` |
+| 渲染字段 | <code>{{ form.field() }}</code> |
+| 显示错误 | <code>{% for error in form.field.errors %}</code> |
+| CSRF 令牌 | <code>{{ form.hidden_tag() }}</code> |
 
 > 💡 **提示**：使用 Flask-WTF 可以自动处理 CSRF 保护，这是 Web 安全的基本要求。永远不要禁用 CSRF 保护，除非你有充分的理由。

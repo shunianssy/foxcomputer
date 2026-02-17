@@ -1,2 +1,4 @@
 node_modules/
-docs/fastapi/
+
+docs/.vitepress/dist/
+docs/.vitepress/cache/
