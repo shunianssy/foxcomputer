@@ -92,10 +92,15 @@ export default defineConfig({
           collapsed: false,
           items: getSidebarItems('ai') 
         },
-       {
+        {
           text: '赛博扫盲',
           collapsed: false,
           items: getSidebarItems('literacy') 
+        },
+        {
+          text: '解决问题系列',
+          collapsed: false,
+          items: getSidebarItems('troubleshooting') 
         }
       ]
     },
@@ -108,7 +113,8 @@ export default defineConfig({
       { text: '科技新闻', link: '/news/index' },
       { text: '科技技能', link: '/skills/index' },
       { text: 'AI 知识', link: '/ai/index' },
-      { text: '赛博扫盲', link: '/literacy/index' }
+      { text: '赛博扫盲', link: '/literacy/index' },
+      { text: '解决问题', link: '/troubleshooting/index' }
     ],
 
     footer: {
