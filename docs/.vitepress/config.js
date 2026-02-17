@@ -68,14 +68,39 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Python 入门教程',
+          collapsed: false,
+          items: getSidebarItems('python') 
+        },
+        {
           text: 'Flask 教程文档',
           collapsed: false,
           items: getSidebarItems('flask') 
         },
         {
+          text: 'Django 教程文档',
+          collapsed: false,
+          items: getSidebarItems('django') 
+        },
+        {
           text: 'FastAPI 教程文档',
           collapsed: false,
           items: getSidebarItems('fastapi') 
+        },
+        {
+          text: 'Godot 教程文档',
+          collapsed: false,
+          items: getSidebarItems('godot') 
+        },
+        {
+          text: 'C++ 入门教程',
+          collapsed: false,
+          items: getSidebarItems('cpp') 
+        },
+        {
+          text: 'Web 前端教程',
+          collapsed: false,
+          items: getSidebarItems('web') 
         },
         {
           text: '科技快报',
@@ -108,8 +133,13 @@ export default defineConfig({
     // --- 导航栏配置 ---
     nav: [
       { text: '首页', link: '/' },
+      { text: 'Python', link: '/python/index' },
       { text: 'Flask', link: '/flask/index' },
+      { text: 'Django', link: '/django/index' },
       { text: 'FastAPI', link: '/fastapi/index' },
+      { text: 'Godot', link: '/godot/index' },
+      { text: 'C++', link: '/cpp/index' },
+      { text: 'Web前端', link: '/web/index' },
       { text: '科技新闻', link: '/news/index' },
       { text: '科技技能', link: '/skills/index' },
       { text: 'AI 知识', link: '/ai/index' },
@@ -125,6 +155,12 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/shunianssy/foxcomputer' }
     ],
+    
+    // 在 GitHub 上编辑此页
+    editLink: {
+      pattern: 'https://github.com/shunianssy/foxcomputer/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页'
+    },
     
     search: {
       provider: 'local',
