@@ -11,6 +11,7 @@ Python 是一门简洁、优雅且功能强大的编程语言。本教程从零�
 - 学会面向对象编程的基本概念
 - 了解文件操作和异常处理
 - 掌握常用标准库的使用方法
+- 学习 Pygame 游戏开发基础
 
 ## 📚 教程目录
 
@@ -86,6 +87,30 @@ Python 是一门简洁、优雅且功能强大的编程语言。本教程从零�
 | [8.3](/python/8.3) | re 正则表达式 | 文本模式匹配 |
 | [8.4](/python/8.4) | pathlib | 路径操作新方式 |
 
+### 第九章：第三方库
+
+| 章节 | 标题 | 内容概要 |
+|------|------|----------|
+| [9.1](/python/9.1) | NumPy | 数值计算与数组操作 |
+
+### 第十章：网络爬虫
+
+| 章节 | 标题 | 内容概要 |
+|------|------|----------|
+| [10.1](/python/10.1) | Requests | HTTP 请求库 |
+| [10.2](/python/10.2) | BeautifulSoup | HTML 解析与数据提取 |
+| [10.3](/python/10.3) | Scrapy | 爬虫框架 |
+| [10.4](/python/10.4) | Selenium | 浏览器自动化 |
+| [10.5](/python/10.5) | Playwright | 现代浏览器自动化 |
+
+### 第十一章：文档处理
+
+| 章节 | 标题 | 内容概要 |
+|------|------|----------|
+| [11.1](/python/11.1) | OpenPyXL | Excel 文件读写操作 |
+| [11.2](/python/11.2) | Python-docx | Word 文档处理 |
+| [11.3](/python/11.3) | PyPDF2 | PDF 文件处理 |
+
 ---
 
 ## 🔗 相关资源
@@ -94,6 +119,7 @@ Python 是一门简洁、优雅且功能强大的编程语言。本教程从零�
 - [Python 官方教程](https://docs.python.org/zh-cn/3/tutorial/)
 - [PEP 8 编码规范](https://peps.python.org/pep-0008/)
 - [Python Package Index (PyPI)](https://pypi.org/)
+- [Pygame 官方文档](https://www.pygame.org/docs/)
 
 ## 💡 学习建议
 

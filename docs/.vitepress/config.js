@@ -93,6 +93,11 @@ export default defineConfig({
           items: getSidebarItems('godot') 
         },
         {
+          text: 'Scratch 扩展开发教程',
+          collapsed: false,
+          items: getSidebarItems('scratch') 
+        },
+        {
           text: 'C++ 入门教程',
           collapsed: false,
           items: getSidebarItems('cpp') 
@@ -134,6 +139,7 @@ export default defineConfig({
     nav: [
       { text: 'Flask', link: '/flask/index' },
       { text: 'Web前端', link: '/web/index' },
+      { text: 'Scratch扩展', link: '/scratch/index' },
       { text: '科技新闻', link: '/news/index' },
       { text: '科技技能', link: '/skills/index' },
       { text: 'AI 知识', link: '/ai/index' },
