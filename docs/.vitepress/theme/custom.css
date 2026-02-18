@@ -1,0 +1,19 @@
+/* 编辑链接样式 */
+.edit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  transition: color 0.25s;
+  margin-bottom: 1rem;
+}
+
+.edit-link:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.edit-link-icon {
+  font-size: 1rem;
+}

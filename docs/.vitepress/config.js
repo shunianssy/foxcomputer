@@ -132,13 +132,7 @@ export default defineConfig({
 
     // --- 导航栏配置 ---
     nav: [
-      { text: '首页', link: '/' },
-      { text: 'Python', link: '/python/index' },
       { text: 'Flask', link: '/flask/index' },
-      { text: 'Django', link: '/django/index' },
-      { text: 'FastAPI', link: '/fastapi/index' },
-      { text: 'Godot', link: '/godot/index' },
-      { text: 'C++', link: '/cpp/index' },
       { text: 'Web前端', link: '/web/index' },
       { text: '科技新闻', link: '/news/index' },
       { text: '科技技能', link: '/skills/index' },
