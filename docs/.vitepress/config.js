@@ -73,9 +73,19 @@ export default defineConfig({
           items: getSidebarItems('python') 
         },
         {
+          text: 'Node.js 教程文档',
+          collapsed: false,
+          items: getSidebarItems('nodejs') 
+        },
+        {
           text: 'Flask 教程文档',
           collapsed: false,
           items: getSidebarItems('flask') 
+        },
+        {
+          text: 'Vue.js 教程文档',
+          collapsed: false,
+          items: getSidebarItems('vue') 
         },
         {
           text: 'Django 教程文档',
@@ -98,9 +108,29 @@ export default defineConfig({
           items: getSidebarItems('scratch') 
         },
         {
+          text: 'MySQL 教程文档',
+          collapsed: false,
+          items: getSidebarItems('mysql') 
+        },
+        {
+          text: 'ESP 硬件教程',
+          collapsed: false,
+          items: getSidebarItems('esp') 
+        },
+        {
+          text: 'C 语言入门教程',
+          collapsed: false,
+          items: getSidebarItems('c') 
+        },
+        {
           text: 'C++ 入门教程',
           collapsed: false,
           items: getSidebarItems('cpp') 
+        },
+        {
+          text: 'Java 入门教程',
+          collapsed: false,
+          items: getSidebarItems('java') 
         },
         {
           text: 'Web 前端教程',
@@ -138,6 +168,9 @@ export default defineConfig({
     // --- 导航栏配置 ---
     nav: [
       { text: 'Flask', link: '/flask/index' },
+      { text: 'Vue.js', link: '/vue/index' },
+      { text: 'Java', link: '/java/index' },
+      { text: 'ESP硬件', link: '/esp/index' },
       { text: 'Web前端', link: '/web/index' },
       { text: 'Scratch扩展', link: '/scratch/index' },
       { text: '科技新闻', link: '/news/index' },
