@@ -59,7 +59,7 @@ Vue.js 是一个渐进式 JavaScript 框架，用于构建用户界面。它的�
 - [Pinia 官方文档](https://pinia.vuejs.org/)
 - [Vue.js GitHub](https://github.com/vuejs/vue)
 
-## 💡 学习建议
+## 学习建议
 
 1. **循序渐进**：按照章节顺序学习，每章都有示例代码
 2. **动手实践**：边学边写代码，加深理解

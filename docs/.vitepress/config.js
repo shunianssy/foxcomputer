@@ -113,6 +113,11 @@ export default defineConfig({
           items: getSidebarItems('mysql') 
         },
         {
+          text: 'Docker 入门教程',
+          collapsed: false,
+          items: getSidebarItems('docker') 
+        },
+        {
           text: 'ESP 硬件教程',
           collapsed: false,
           items: getSidebarItems('esp') 
