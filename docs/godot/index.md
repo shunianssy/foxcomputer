@@ -105,7 +105,7 @@ Godot 是一款免费、开源的游戏引擎，以其轻量级、跨平台和�
 - [Godot Asset Library](https://godotengine.org/asset-library/asset)
 - [Godot 官方社区](https://godotengine.org/community)
 
-## 💡 学习建议
+## 学习建议
 
 1. **循序渐进**：按照章节顺序学习，每章都有示例项目
 2. **动手实践**：边学边做，创建自己的小游戏

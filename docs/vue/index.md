@@ -12,7 +12,7 @@ Vue.js 是一个渐进式 JavaScript 框架，用于构建用户界面。它的�
 - 掌握 Pinia 状态管理
 - 了解 Vue 3 Composition API 的新特性
 
-## 📚 教程目录
+## 教程目录
 
 ### 第一章：Vue.js 入门
 

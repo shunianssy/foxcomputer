@@ -104,7 +104,7 @@ Django 是一个高级 Python Web 框架，鼓励快速开发和简洁实用的�
 - [Django 扩展包](https://djangopackages.org/)
 - [Django 中文文档](https://docs.djangoproject.com/zh-hans/)
 
-## 💡 学习建议
+## 学习建议
 
 1. **循序渐进**：按照章节顺序学习，每章都有示例代码
 2. **动手实践**：边学边写代码，加深理解

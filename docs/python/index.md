@@ -113,7 +113,7 @@ Python 是一门简洁、优雅且功能强大的编程语言。本教程从零�
 
 ---
 
-## 🔗 相关资源
+## 相关资源
 
 - [Python 官方文档](https://docs.python.org/zh-cn/3/)
 - [Python 官方教程](https://docs.python.org/zh-cn/3/tutorial/)

@@ -98,7 +98,7 @@ Flask 是一个轻量级的 Python Web 框架，以其简洁、灵活而著称�
 
 ---
 
-## 🔗 相关资源
+## 相关资源
 
 - [Flask 官方文档](https://flask.palletsprojects.com/)
 - [Jinja2 模板引擎](https://jinja.palletsprojects.com/)

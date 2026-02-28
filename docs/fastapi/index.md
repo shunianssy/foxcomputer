@@ -77,7 +77,7 @@ FastAPI 是一个现代、高性能的 Python Web 框架，基于标准的 Pytho
 - [Starlette 文档](https://www.starlette.io/)
 - [Uvicorn 文档](https://www.uvicorn.org/)
 
-## 💡 学习建议
+## 学习建议
 
 1. **循序渐进**：按照章节顺序学习，每章都有示例代码
 2. **动手实践**：边学边写代码，加深理解
