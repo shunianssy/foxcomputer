@@ -123,7 +123,7 @@ MySQL 是世界上最流行的开源关系型数据库管理系统，广泛应�
 - [MySQL Workbench 下载](https://www.mysql.com/products/workbench/)
 - [MariaDB 官网](https://mariadb.org/)
 
-## 💡 学习建议
+## 学习建议
 
 1. **循序渐进**：按照章节顺序学习，每章都有示例代码
 2. **动手实践**：边学边写 SQL，加深理解

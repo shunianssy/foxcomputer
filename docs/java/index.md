@@ -104,7 +104,7 @@ Java 是一门面向对象的编程语言，具有跨平台、安全性高、稳
 - [Java 编程思想](https://book.douban.com/subject/2130190/)
 - [Effective Java](https://book.douban.com/subject/30412517/)
 
-## 💡 学习建议
+## 学习建议
 
 1. **循序渐进**：按照章节顺序学习，每章都有示例代码
 2. **动手实践**：边学边写代码，加深理解
