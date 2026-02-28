@@ -6,10 +6,10 @@
 
 Scratch 是全球最受欢迎的少儿编程平台之一。通过开发 Scratch 扩展，你可以：
 
-- 🔌 连接各种硬件设备
-- 🌐 调用外部 API 服务
-- 🎮 创建自定义游戏功能
-- 🤖 实现机器学习功能
+- 连接各种硬件设备
+- 调用外部 API 服务
+- 创建自定义游戏功能
+- 实现机器学习功能
 
 ## 目录
 
@@ -45,11 +45,11 @@ Scratch 是全球最受欢迎的少儿编程平台之一。通过开发 Scratch 
 
 ```mermaid
 graph LR
-    A[环境搭建] --> B[基础语法]
-    B --> C[积木块设计]
-    C --> D[API 扩展]
-    D --> E[硬件扩展]
-    E --> F[发布分享]
+ A[环境搭建] --> B[基础语法]
+ B --> C[积木块设计]
+ C --> D[API 扩展]
+ D --> E[硬件扩展]
+ E --> F[发布分享]
 ```
 
 ### 推荐工具
@@ -66,30 +66,30 @@ graph LR
 
 ```javascript
 class HelloExtension {
-    getInfo() {
-        return {
-            id: 'hello',
-            name: '你好世界',
-            color1: '#FF6680',
-            blocks: [
-                {
-                    opcode: 'sayHello',
-                    blockType: Scratch.BlockType.REPORTER,
-                    text: '向 [NAME] 问好',
-                    arguments: {
-                        NAME: {
-                            type: Scratch.ArgumentType.STRING,
-                            defaultValue: '世界'
-                        }
-                    }
-                }
-            ]
-        };
-    }
+ getInfo() {
+ return {
+ id: 'hello',
+ name: '你好世界',
+ color1: '#FF6680',
+ blocks: [
+ {
+ opcode: 'sayHello',
+ blockType: Scratch.BlockType.REPORTER,
+ text: '向 [NAME] 问好',
+ arguments: {
+ NAME: {
+ type: Scratch.ArgumentType.STRING,
+ defaultValue: '世界'
+ }
+ }
+ }
+ ]
+ };
+ }
 
-    sayHello(args) {
-        return `你好，${args.NAME}！`;
-    }
+ sayHello(args) {
+ return `你好，${args.NAME}！`;
+ }
 }
 
 Scratch.extensions.register(new HelloExtension());
@@ -144,4 +144,4 @@ A: 推荐使用：
 
 ---
 
-> 💡 **提示**：建议按照章节顺序学习，循序渐进掌握扩展开发技能。
+> **提示**：建议按照章节顺序学习，循序渐进掌握扩展开发技能。

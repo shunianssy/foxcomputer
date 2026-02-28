@@ -1,10 +1,10 @@
 # Django 完整教程
 
-## 📖 教程简介
+## 教程简介
 
 Django 是一个高级 Python Web 框架，鼓励快速开发和简洁实用的设计。它由经验丰富的开发者构建，解决了 Web 开发中的许多麻烦，让你可以专注于编写应用程序，而无需重新发明轮子。
 
-## 🎯 学习目标
+## 学习目标
 
 - 理解 Django 的核心概念和 MTV 架构模式
 - 掌握模型、视图、模板等基础功能
@@ -12,7 +12,7 @@ Django 是一个高级 Python Web 框架，鼓励快速开发和简洁实用的�
 - 了解用户认证、Admin 后台等内置功能
 - 掌握 RESTful API 开发和部署最佳实践
 
-## 📚 教程目录
+## 教程目录
 
 ### 第一章：Django 入门
 
@@ -97,7 +97,7 @@ Django 是一个高级 Python Web 框架，鼓励快速开发和简洁实用的�
 
 ---
 
-## 🔗 相关资源
+## 相关资源
 
 - [Django 官方文档](https://docs.djangoproject.com/)
 - [Django REST Framework](https://www.django-rest-framework.org/)

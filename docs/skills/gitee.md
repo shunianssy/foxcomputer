@@ -258,7 +258,7 @@ git commit -m "fix: 修复登录问题，关闭 #123"
 
 ## Gitee Pages 静态网站
 
-> ⚠️ 注意：Gitee Pages 需要实名认证后才能使用
+> 注意：Gitee Pages 需要实名认证后才能使用
 
 ### 创建个人主页
 
@@ -284,29 +284,29 @@ git commit -m "fix: 修复登录问题，关闭 #123"
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的主页</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 { color: #c71d23; }
-        a { color: #c71d23; }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>我的主页</title>
+ <style>
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+ max-width: 800px;
+ margin: 50px auto;
+ padding: 20px;
+ line-height: 1.6;
+ }
+ h1 { color: #c71d23; }
+ a { color: #c71d23; }
+ </style>
 </head>
 <body>
-    <h1>👋 你好，欢迎来到我的主页</h1>
-    <p>我是一名开发者，热爱编程和开源。</p>
-    <h2>项目</h2>
-    <ul>
-        <li><a href="#">项目一</a> - 项目描述</li>
-        <li><a href="#">项目二</a> - 项目描述</li>
-    </ul>
+ <h1>👋 你好，欢迎来到我的主页</h1>
+ <p>我是一名开发者，热爱编程和开源。</p>
+ <h2>项目</h2>
+ <ul>
+ <li><a href="#">项目一</a> - 项目描述</li>
+ <li><a href="#">项目二</a> - 项目描述</li>
+ </ul>
 </body>
 </html>
 ```
@@ -331,21 +331,21 @@ git push origin master
 
 ```
 1. Fork 仓库
-     ↓
+ ↓
 2. 克隆到本地
-     ↓
+ ↓
 3. 创建功能分支
-     ↓
+ ↓
 4. 编写代码
-     ↓
+ ↓
 5. 提交更改
-     ↓
+ ↓
 6. 推送到 Fork
-     ↓
+ ↓
 7. 创建 Pull Request
-     ↓
+ ↓
 8. 代码审查
-     ↓
+ ↓
 9. 合并代码
 ```
 
@@ -429,7 +429,7 @@ git branch -d feature/new-feature
 3. 滚动到页面底部 **删除仓库**
 4. 输入仓库名称确认删除
 
-> ⚠️ 警告：删除操作不可恢复！
+> 警告：删除操作不可恢复！
 
 ### 如何撤销最近的提交？
 
@@ -550,4 +550,4 @@ git push origin master
 
 ---
 
-> 💡 提示：Gitee 是国内访问速度最快的代码托管平台，适合国内团队协作！
+> 提示：Gitee 是国内访问速度最快的代码托管平台，适合国内团队协作！

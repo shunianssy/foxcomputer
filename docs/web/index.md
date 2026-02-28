@@ -1,17 +1,17 @@
 # Web 前端入门教程
 
-## 📖 教程简介
+## 教程简介
 
 本教程从零开始，带你系统学习 Web 前端开发的三大核心技术：HTML、CSS 和 JavaScript。无论你是完全零基础的新手，还是想要巩固基础的开发者，都能从中受益。
 
-## 🎯 学习目标
+## 学习目标
 
 - 掌握 HTML 网页结构与语义化标签
 - 学会使用 CSS 进行页面美化与布局
 - 理解 JavaScript 编程基础与 DOM 操作
 - 能够独立开发简单的网页应用
 
-## 📚 教程目录
+## 教程目录
 
 ### 第一章：HTML 基础
 
@@ -49,7 +49,7 @@
 
 ---
 
-## 🔗 相关资源
+## 相关资源
 
 - [MDN Web 文档](https://developer.mozilla.org/zh-CN/)
 - [W3Schools](https://www.w3schools.com/)

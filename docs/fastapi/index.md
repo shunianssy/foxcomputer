@@ -1,10 +1,10 @@
 # FastAPI 完整教程
 
-## 📖 教程简介
+## 教程简介
 
 FastAPI 是一个现代、高性能的 Python Web 框架，基于标准的 Python 类型提示构建。它具有自动 API 文档生成、数据验证、异步支持等强大特性，是目前最流行的 Python Web 框架之一。
 
-## 🎯 学习目标
+## 学习目标
 
 - 理解 FastAPI 的核心概念和设计哲学
 - 掌握路由、请求处理、响应模型等基础功能
@@ -12,7 +12,7 @@ FastAPI 是一个现代、高性能的 Python Web 框架，基于标准的 Pytho
 - 了解异步编程和数据库操作
 - 掌握 API 文档自动生成和部署最佳实践
 
-## 📚 教程目录
+## 教程目录
 
 ### 第一章：FastAPI 入门
 
@@ -70,7 +70,7 @@ FastAPI 是一个现代、高性能的 Python Web 框架，基于标准的 Pytho
 
 ---
 
-## 🔗 相关资源
+## 相关资源
 
 - [FastAPI 官方文档](https://fastapi.tiangolo.com/)
 - [Pydantic 文档](https://docs.pydantic.dev/)

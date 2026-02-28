@@ -297,20 +297,20 @@ image: node:18
 
 # 阶段定义
 stages:
-  - deploy
+ - deploy
 
 # Pages 部署任务
 pages:
-  stage: deploy
-  script:
-    - mkdir -p public
-    - cp -r *.html *.css *.js public/ 2>/dev/null || true
-    - cp -r dist/* public/ 2>/dev/null || true
-  artifacts:
-    paths:
-      - public
-  only:
-    - main
+ stage: deploy
+ script:
+ - mkdir -p public
+ - cp -r *.html *.css *.js public/ 2>/dev/null || true
+ - cp -r dist/* public/ 2>/dev/null || true
+ artifacts:
+ paths:
+ - public
+ only:
+ - main
 ```
 
 ### 简单主页示例
@@ -319,29 +319,29 @@ pages:
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的主页</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 { color: #fc6d26; }
-        a { color: #fc6d26; }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>我的主页</title>
+ <style>
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+ max-width: 800px;
+ margin: 50px auto;
+ padding: 20px;
+ line-height: 1.6;
+ }
+ h1 { color: #fc6d26; }
+ a { color: #fc6d26; }
+ </style>
 </head>
 <body>
-    <h1>👋 你好，欢迎来到我的主页</h1>
-    <p>我是一名开发者，热爱编程和开源。</p>
-    <h2>项目</h2>
-    <ul>
-        <li><a href="#">项目一</a> - 项目描述</li>
-        <li><a href="#">项目二</a> - 项目描述</li>
-    </ul>
+ <h1>👋 你好，欢迎来到我的主页</h1>
+ <p>我是一名开发者，热爱编程和开源。</p>
+ <h2>项目</h2>
+ <ul>
+ <li><a href="#">项目一</a> - 项目描述</li>
+ <li><a href="#">项目二</a> - 项目描述</li>
+ </ul>
 </body>
 </html>
 ```
@@ -359,39 +359,39 @@ GitLab 内置强大的 CI/CD 功能，通过 `.gitlab-ci.yml` 配置。
 
 # 定义阶段
 stages:
-  - build
-  - test
-  - deploy
+ - build
+ - test
+ - deploy
 
 # 构建任务
 build:
-  stage: build
-  image: node:18
-  script:
-    - npm install
-    - npm run build
-  artifacts:
-    paths:
-      - dist/
+ stage: build
+ image: node:18
+ script:
+ - npm install
+ - npm run build
+ artifacts:
+ paths:
+ - dist/
 
 # 测试任务
 test:
-  stage: test
-  image: node:18
-  script:
-    - npm install
-    - npm test
-  dependencies:
-    - build
+ stage: test
+ image: node:18
+ script:
+ - npm install
+ - npm test
+ dependencies:
+ - build
 
 # 部署任务
 deploy:
-  stage: deploy
-  script:
-    - echo "部署到生产环境"
-  only:
-    - main
-  when: manual
+ stage: deploy
+ script:
+ - echo "部署到生产环境"
+ only:
+ - main
+ when: manual
 ```
 
 ### 常用配置说明
@@ -412,37 +412,37 @@ deploy:
 ```yaml
 # .gitlab-ci.yml
 stages:
-  - test
-  - build
-  - deploy
+ - test
+ - build
+ - deploy
 
 test:
-  stage: test
-  image: python:3.11
-  script:
-    - pip install -r requirements.txt
-    - pip install pytest
-    - pytest tests/
+ stage: test
+ image: python:3.11
+ script:
+ - pip install -r requirements.txt
+ - pip install pytest
+ - pytest tests/
 
 build:
-  stage: build
-  image: python:3.11
-  script:
-    - pip install build
-    - python -m build
-  artifacts:
-    paths:
-      - dist/
+ stage: build
+ image: python:3.11
+ script:
+ - pip install build
+ - python -m build
+ artifacts:
+ paths:
+ - dist/
 
 deploy:
-  stage: deploy
-  image: python:3.11
-  script:
-    - pip install twine
-    - twine upload dist/*
-  only:
-    - tags
-  when: manual
+ stage: deploy
+ image: python:3.11
+ script:
+ - pip install twine
+ - twine upload dist/*
+ only:
+ - tags
+ when: manual
 ```
 
 ---
@@ -453,21 +453,21 @@ deploy:
 
 ```
 1. Fork 项目
-     ↓
+ ↓
 2. 克隆到本地
-     ↓
+ ↓
 3. 创建功能分支
-     ↓
+ ↓
 4. 编写代码
-     ↓
+ ↓
 5. 提交更改
-     ↓
+ ↓
 6. 推送到 Fork
-     ↓
+ ↓
 7. 创建 Merge Request
-     ↓
+ ↓
 8. 代码审查
-     ↓
+ ↓
 9. 合并代码
 ```
 
@@ -516,7 +516,7 @@ git branch -d feature/new-feature
 3. 滚动到 **Delete project**
 4. 输入项目路径确认删除
 
-> ⚠️ 警告：删除操作不可恢复！
+> 警告：删除操作不可恢复！
 
 ### 如何撤销最近的提交？
 
@@ -637,4 +637,4 @@ gitlab-runner exec shell build
 
 ---
 
-> 💡 提示：GitLab 是功能最完整的 DevOps 平台，适合需要完整 CI/CD 流程的团队！
+> 提示：GitLab 是功能最完整的 DevOps 平台，适合需要完整 CI/CD 流程的团队！
